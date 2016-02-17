@@ -22,7 +22,20 @@ function generatePassword($passwordWords, $totalWords, $passwordSymbols) {
 		 	$generatedPassword .= $passwordWords[array_rand($passwordWords)]." ";
 		}
 
-		$generatedPassword = str_replace(' ', '-', trim($generatedPassword));
+		switch($_POST['passwordSeperator']) {
+			case 'camel':
+				$generatedPassword = ucwords(trim($generatedPassword));
+				$generatedPassword = str_replace(' ', '', $generatedPassword);
+				$generatedPassword = lcfirst($generatedPassword);
+				break;
+			case 'dash':
+				$generatedPassword = str_replace(' ', '-', trim($generatedPassword));
+				break;
+			case 'space':
+				break;
+		}
+
+		##$generatedPassword = str_replace(' ', '-', trim($generatedPassword));
 
 		if (isset($_POST['passwordNumber'])) {
 			$generatedPassword .= rand(1, 9);

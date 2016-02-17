@@ -44,6 +44,20 @@
 	    					</label>
 	    				</p>
 
+						<p class="col-sm-12">
+							<label><b>Word Seperator :</b><br> dash-dash
+								<input type="radio" value="dash" name="passwordSeperator" id="passwordRadio1" class="paddedLeft" checked="checked">
+							</label>
+
+							<label>camelCase
+								<input class="paddedLeft" id="passwordRadio2" name="passwordSeperator" value="camel" type="radio">
+							</label>
+
+							<label>Spaces Spaces
+								<input type="radio" value="space" name="passwordSeperator" id="passwordRadio3" class="paddedLeft">
+							</label>
+						</p>
+
 	    				<p>
   							<button type="submit" class="btn btn-primary">Generate</button>
 						</p>
