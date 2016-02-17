@@ -18,21 +18,23 @@ function generatePassword($passwordWords, $totalWords, $passwordSymbols) {
 			$passwordSize = 2;
 		}
 
+		for ($x = 1; $x <= $passwordSize; $x++) {
+		 	$generatedPassword .= $passwordWords[array_rand($passwordWords)]." ";
+		}
+
+		$generatedPassword = str_replace(' ', '-', trim($generatedPassword));
+
 		if (isset($_POST['passwordNumber'])) {
-			$passwordNumber = $_POST['passwordNumber'];
+			$generatedPassword .= rand(1, 9);
 		} else {
 			$passwordNumber = 'off';
 		}
 
 		if (isset($_POST['passwordSpecial'])) {
-			$passwordSpecial = $_POST['passwordSpecial'];
+			$generatedPassword .= $passwordSymbols[array_rand($passwordSymbols)];
 		} else {
 			$passwordSpecial = 'off';
-		}
-
-		for ($x = 1; $x <= $passwordSize; $x++) {
-		 	$generatedPassword .= $passwordWords[array_rand($passwordWords)];
-		}
+		}		
 
 	}
 

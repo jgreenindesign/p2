@@ -11,6 +11,10 @@
 		<!-- Bootstrap framework -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+
         <?php require('logic.php'); ?>
     </head>
 
@@ -19,30 +23,36 @@
 		<div class="container">
 			<div class="col-sm-12 col-md-6" id="formContainer">
 
-	    		<form action="index.php" method="POST">
+				<form action="index.php" method="POST">
 	    			<fieldset>
-	    				<legend>Password Generator</legend>
-	    				<p>
-	    					<label for="passwordSize">Number of Words:</label>
-	    					<input type="text" name="passwordSize" id="passwordSize"  class="paddedLeft">
+	    				<legend>xkcd Password Generator</legend>
+	    				<p class="col-sm-12">
+	    					<label for="passwordSize"># of Words (2 - 9):
+	    						<input type="text" name="passwordSize" id="passwordSize" class="paddedLeft" maxlength="1">
+	    					</label>
+	    				</p>
+
+	    				<p class="col-sm-12">
+	    					<label for="passwordNumber">Include a Number:
+	    						<input type="checkbox" name="passwordNumber" id="passwordNumber" class="paddedLeft">
+	    					</label>
+	    				</p>
+
+	    				<p class="col-sm-12">
+	    					<label for="passwordSpecial">Include a Special Character:
+	    						<input type="checkbox" name="passwordSpecial" id="passwordSpecial" class="paddedLeft">
+	    					</label>
 	    				</p>
 
 	    				<p>
-	    					<label for="passwordNumber">Include a Number:</label>
-	    					<input type="checkbox" name="passwordNumber" id="passwordNumber" class="paddedLeft">
-	    				</p>
-
-	    				<p>
-	    					<label for="passwordSpecial">Number of Words:</label>
-	    					<input type="checkbox" name="passwordSpecial" id="passwordSpecial" class="paddedLeft">
-	    				</p>    				
-
-	    				<button type="submit" class="btn btn-primary">Generate</button>
+  							<button type="submit" class="btn btn-primary">Generate</button>
+						</p>
 	    			</fieldset>
 	    		</form>
 
 				<p class="passwordOutput"><?php echo $generatedPassword; ?> </p>
 
+				<img src="http://imgs.xkcd.com/comics/password_strength.png" alt="xkcd style passwords" style="width: 100%;">
 			</div>
 		</div>
 
