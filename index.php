@@ -7,17 +7,18 @@
 
         <!-- CSS Stylesheets -->
         <link rel="stylesheet" href="css/style.css" type="text/css">
-		
+
 		<!-- Bootstrap framework -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
         <?php require('logic.php'); ?>
-
     </head>
+
     <body>
 
 		<div class="container">
-			<div class="col-sm-12 col-md-6">
+			<div class="col-sm-12 col-md-6" id="formContainer">
+
 	    		<form action="index.php" method="POST">
 	    			<fieldset>
 	    				<legend>Password Generator</legend>
@@ -38,8 +39,10 @@
 
 	    				<button type="submit" class="btn btn-primary">Generate</button>
 	    			</fieldset>
-
 	    		</form>
+
+				<p class="passwordOutput"><?php echo $generatedPassword; ?> </p>
+
 			</div>
 		</div>
 

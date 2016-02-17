@@ -1,5 +1,4 @@
 <?php
-
 ## Load text file into array
 $passwordWords = file('passwordWords.txt', FILE_IGNORE_NEW_LINES);
 $totalWords = count($passwordWords);
@@ -8,18 +7,17 @@ $totalWords = count($passwordWords);
 $passwordSymbols = array(' ', '!', '#', '$', '%', '&', '?', '@');	
 
 function generatePassword($passwordWords, $totalWords, $passwordSymbols) {
-
 	$generatedPassword = "";
 
 	if(!empty($_POST)) {
 
 		## Create Variables from form submittion
-		if (is_numeric($_POST['passwordSize'])) {
+		if (is_numeric($_POST['passwordSize']) && $_POST['passwordSize'] > 1) {
 			$passwordSize = $_POST['passwordSize'];
 		} else {
 			$passwordSize = 2;
 		}
-		
+
 		if (isset($_POST['passwordNumber'])) {
 			$passwordNumber = $_POST['passwordNumber'];
 		} else {
@@ -42,7 +40,5 @@ function generatePassword($passwordWords, $totalWords, $passwordSymbols) {
 }
 
 $generatedPassword = generatePassword($passwordWords, $totalWords, $passwordSymbols);
-
-echo $generatedPassword;
 
 ?>

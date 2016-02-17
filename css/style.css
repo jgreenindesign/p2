@@ -1,9 +1,4 @@
-.paddedLeft
-{
-	margin-left: 20px !important;
-}
-
-form
+#formContainer
 {
 	background: rgba(242,242,242,1);
 	background: -moz-linear-gradient(top, rgba(242,242,242,1) 0%, rgba(232,232,232,1) 100%);
@@ -15,6 +10,27 @@ form
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#e8e8e8', GradientType=0 );
 
 	border: 2px solid #bababa;
-	padding: 25px 50px;
 	border-radius: 5px;
+}
+
+
+
+.paddedLeft
+{
+	margin-left: 20px !important;
+}
+
+
+
+.passwordOutput, #formContainer
+{
+    padding: 25px 50px;
+    text-align: center;
+    background-color: #bababa;
+}
+
+.passwordOutput
+{
+    margin-top: 10px;
+    color: white;
 }
