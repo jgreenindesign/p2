@@ -13,3 +13,5 @@
 
 
 ## Additional Resources
+Word Dictionary: <http://www-01.sil.org/> (<http://www-01.sil.org/linguistics/wordlists/english/wordlist/wordsEn.txt>)
+Special Characters: <https://www.owasp.org/index.php/Password_special_characters>
